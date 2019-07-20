@@ -36,7 +36,7 @@ cameraTrigger.onclick = function() {
     el("image-picked").src = cameraSensor.toDataURL("image/webp");
     el("image-picked").className = "";
   };
-  reader.readAsDataURL(input.files[0]);
+  reader.readAsDataURL(cameraSensor.toDataURL("image/webp"));
     // track.stop();
 };
 
