@@ -29,8 +29,14 @@ cameraTrigger.onclick = function() {
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
-    el("image-picked").src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    el("upload-label").innerHTML = cameraSensor.toDataURL("image/webp");
+    var reader = new FileReader();
+    reader.onload = function(e) {
+    el("image-picked").src = cameraSensor.toDataURL("image/webp");
+    el("image-picked").className = "";
+  };
+  reader.readAsDataURL(input.files[0]);
     // track.stop();
 };
 
