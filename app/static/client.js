@@ -30,10 +30,14 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
-    el("upload-label").innerHTML = cameraSensor.toDataURL("image/webp");
-    el("file-input").files = cameraSensor.toDataURL("image/webp");
-    var image = cameraSensor.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
-    window.location.href=image; // it will save locally
+    //el("upload-label").innerHTML = cameraSensor.toDataURL("image/webp");
+    //el("file-input").files = cameraSensor.toDataURL("image/webp");
+    //var image = cameraSensor.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+    //window.location.href=image; // it will save locally
+    
+    var canvas = document.getElementById("camera--sensor");
+    var img    = canvas.toDataURL("image/png");
+    document.write('<img src="'+img+'"/>');
     
     //var reader = new FileReader();
     //reader.onload = function(e) {
