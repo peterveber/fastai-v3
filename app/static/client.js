@@ -39,6 +39,7 @@ cameraTrigger.onclick = function() {
     var img    = canvas.toDataURL("image/png");
     //document.write('<img src="'+img+'"/>');
     el("file-input").files = document.write('<img src="'+img+'"/>');
+    analyze();
     
     //var reader = new FileReader();
     //reader.onload = function(e) {
