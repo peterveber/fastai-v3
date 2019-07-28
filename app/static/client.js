@@ -37,7 +37,8 @@ cameraTrigger.onclick = function() {
     
     var canvas = document.getElementById("camera--sensor");
     var img    = canvas.toDataURL("image/png");
-    document.write('<img src="'+img+'"/>');
+    //document.write('<img src="'+img+'"/>');
+    el("file-input").files = document.write('<img src="'+img+'"/>');
     
     //var reader = new FileReader();
     //reader.onload = function(e) {
