@@ -31,15 +31,16 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
     el("upload-label").innerHTML = cameraSensor.toDataURL("image/webp");
-    var reader = new FileReader();
-    reader.onload = function(e) {
-    el("image-picked").src = cameraSensor.toDataURL("image/webp");
-    el("image-picked").className = "";
-        
     var image = cameraSensor.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
     window.location.href=image; // it will save locally
-  };
-  reader.readAsDataURL(cameraSensor.toDataURL("image/webp"));
+    //var reader = new FileReader();
+    //reader.onload = function(e) {
+    //el("image-picked").src = cameraSensor.toDataURL("image/webp");
+    //el("image-picked").className = "";
+        
+
+  //};
+  //reader.readAsDataURL(cameraSensor.toDataURL("image/webp"));
     // track.stop();
 };
 
