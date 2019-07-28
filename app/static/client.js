@@ -41,7 +41,7 @@ cameraTrigger.onclick = function() {
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
     document.getElementById("camera--sensor").addEventListener('click', function() {
-    downloadCanvas(this, '"camera--sensor"', 'test.png');
+    downloadCanvas(this, 'camera--sensor', 'test.png');
     }, false);
     
     analyze();
