@@ -40,11 +40,9 @@ cameraTrigger.onclick = function() {
     //document.write('<img src="'+img+'"/>');
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
-    var snap = document.getElementById("camera--sensor");
-    var img = snap.toDataURL();
-    var file = dataURItoBlob(img);
+    var file = document.getElementById("camera--sensor");
     
-    el("file-input").files = file;
+    el("file-input").files = URL.createObjectURL(file);
        
     analyze();
     
@@ -64,24 +62,6 @@ link.href = document.getElementById(canvasId).toDataURL();
 link.download = filename;
 
 }
-
-function dataURItoBlob(dataURI) {
-    // convert base64/URLEncoded data component to raw binary data held in a string
-    var byteString;
-    if (dataURI.split(',')[0].indexOf('base64') >= 0)
-        byteString = atob(dataURI.split(',')[1]);
-    else
-        byteString = unescape(dataURI.split(',')[1]);
-    // separate out the mime component
-    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-    // write the bytes of the string to a typed array
-    var ia = new Uint8Array(byteString.length);
-    for (var i = 0; i < byteString.length; i++) {
-        ia[i] = byteString.charCodeAt(i);
-    }
-    return new Blob([ia], {type:mimeString});
-}
-
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
