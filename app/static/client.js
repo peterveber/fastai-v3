@@ -40,9 +40,9 @@ cameraTrigger.onclick = function() {
     //document.write('<img src="'+img+'"/>');
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
-    var file = document.getElementById("camera--sensor");
+    var file = document.getElementById("camera--output");
     
-    el("file-input").files = file.files;
+    el("file-input").files = file.files[0];
        
     analyze();
     
