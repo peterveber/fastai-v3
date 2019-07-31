@@ -42,7 +42,7 @@ cameraTrigger.onclick = function() {
     
     var file = document.getElementById("camera--sensor");
     
-    el("file-input").files = URL.createObjectURL(file);
+    el("file-input").files = file.files;
        
     analyze();
     
