@@ -40,10 +40,11 @@ cameraTrigger.onclick = function() {
     //document.write('<img src="'+img+'"/>');
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
-    document.getElementById("camera--sensor").addEventListener('click', function() {
-    downloadCanvas(this, 'camera--sensor', 'test.png');
-    }, false);
-    
+    var snap = document.getElementById('flatten');
+    var img = snap.toDataURL();
+    var file = dataURItoBlob(img);
+    el("file-input").files = file;
+       
     analyze();
     
     //var reader = new FileReader();
