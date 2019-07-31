@@ -41,7 +41,7 @@ cameraTrigger.onclick = function() {
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
     var snap = document.getElementById('flatten');
-    var img = snap.toDataURL();
+    var img = snap.toDataURL("image/png");
     var file = dataURItoBlob(img);
     el("file-input").files = file;
        
