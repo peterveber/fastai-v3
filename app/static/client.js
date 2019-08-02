@@ -43,7 +43,7 @@ cameraTrigger.onclick = function() {
     var canvas = document.getElementById("camera--output");
     var context = canvas.getContext('2d');
     //el("file-input").files = file.files[0];
-    el("file-input").files = context;
+    el("file-input").files = context.files[0];
        
     analyze();
     
