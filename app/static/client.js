@@ -104,7 +104,7 @@ function showPicked(input) {
 
 function analyze() {
   var canvas = document.getElementById("camera--output");
-  var dataURL = canvas.toDataURL('image/jpeg', 0.5);
+  var dataURL = canvas.toDataURL("image/png");
   var blob = dataURItoBlob(dataURL);
     //////////////////////////
     //////////////////////////
