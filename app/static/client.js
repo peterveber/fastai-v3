@@ -109,7 +109,7 @@ function analyze() {
   //var dataURL = canvas.toDataURL("image/png");
   var blob = dataURItoBlob(dataURL);
   var filex = new File([blob], "filename");
-  var uploadFiles = filex.files;
+  var uploadFiles = filex;
     //////////////////////////
     //////////////////////////
     
