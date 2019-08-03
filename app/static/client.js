@@ -134,7 +134,7 @@ function analyze() {
   //fileData.append("file", uploadFiles[0]);
   //xhr.send(fileData);
     
-  var fd = new FormData(document.forms[0]);
+  var fileData = new FormData(document.forms[0]);
   fd.append("canvasImage", blob);
   xhr.send(fileData);
 }
