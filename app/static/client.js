@@ -43,7 +43,7 @@ cameraTrigger.onclick = function() {
     var canvas = document.getElementById("camera--output");
     var context = canvas.getContext('2d');
     //el("file-input").files = file.files[0];
-    el("file-input").files = context.toDataURL();
+    //el("file-input").files = context.toDataURL();
        
     analyze();
     
@@ -62,6 +62,26 @@ function downloadCanvas(link, canvasId, filename) {
 link.href = document.getElementById(canvasId).toDataURL();
 link.download = filename;
 
+}
+
+function dataURItoBlob(dataURI) {
+    // convert base64/URLEncoded data component to raw binary data held in a string
+    var byteString;
+    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+        byteString = atob(dataURI.split(',')[1]);
+    else
+        byteString = unescape(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+    // write the bytes of the string to a typed array
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([ia], {type:mimeString});
 }
 
 // Start the video stream when the window loads
@@ -83,6 +103,12 @@ function showPicked(input) {
 }
 
 function analyze() {
+  var canvas = document.getElementById("camera--output");
+  var dataURL = canvas.toDataURL('image/jpeg', 0.5);
+  var blob = dataURItoBlob(dataURL);
+    //////////////////////////
+    //////////////////////////
+    
   var uploadFiles = el("file-input").files;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
@@ -102,7 +128,11 @@ function analyze() {
     el("analyze-button").innerHTML = "Analyze";
   };
 
-  var fileData = new FormData();
-  fileData.append("file", uploadFiles[0]);
+  //var fileData = new FormData();
+  //fileData.append("file", uploadFiles[0]);
+  //xhr.send(fileData);
+    
+  var fd = new FormData(document.forms[0]);
+  fd.append("canvasImage", blob);
   xhr.send(fileData);
 }
