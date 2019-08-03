@@ -41,7 +41,7 @@ cameraTrigger.onclick = function() {
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
     var canvas = document.getElementById("camera--output");
-    var context = canvas.getContext('2d');
+    //var context = canvas.getContext('2d');
     //el("file-input").files = file.files[0];
     //el("file-input").files = context.toDataURL();
        
