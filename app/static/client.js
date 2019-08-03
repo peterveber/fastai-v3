@@ -108,10 +108,11 @@ function analyze() {
   //var canvas = document.getElementById("camera--output");
   //var dataURL = canvas.toDataURL("image/png");
   var blob = dataURItoBlob(dataURL);
+  var uploadFiles = blob.files;
     //////////////////////////
     //////////////////////////
     
-  var uploadFiles = el("file-input").files;
+  //var uploadFiles = el("file-input").files;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
