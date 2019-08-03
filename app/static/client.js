@@ -109,8 +109,8 @@ function analyze() {
   //var dataURL = canvas.toDataURL("image/png");
   var blob = dataURItoBlob(dataURL);
   var filex = new File([blob], "filename");
-  //var uploadFiles = filex;
-  var uploadFiles = el("file-input").files;
+  var uploadFiles = filex;
+  //var uploadFiles = el("file-input").files;
     //////////////////////////
     //////////////////////////
     
@@ -133,9 +133,13 @@ function analyze() {
     el("analyze-button").innerHTML = "Analyze";
   };
 
+  //var fileData = new FormData();
+  //fileData.append("file", uploadFiles[0]);
+ //hr.send(fileData);
+    
   var fileData = new FormData();
-  fileData.append("file", uploadFiles[0]);
-  xhr.send(fileData);
+  fileData.append("file", uploadFiles);
+  hr.send(fileData);
     
   //var fileData = new FormData(document.forms[0]);
   //fileData.append("canvasImage", blob);
