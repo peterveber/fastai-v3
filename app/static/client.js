@@ -35,8 +35,8 @@ cameraTrigger.onclick = function() {
     //var image = cameraSensor.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
     //window.location.href=image; // it will save locally
     
-    //var canvas = document.getElementById("camera--sensor");
-    //var img    = canvas.toDataURL("image/png");
+    var canvas = document.getElementById("camera--sensor");
+    var img    = canvas.toDataURL("image/png");
     //document.write('<img src="'+img+'"/>');
     //el("file-input").files = document.write('<img src="'+img+'"/>');
     
