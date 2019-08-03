@@ -108,7 +108,8 @@ function analyze() {
   //var canvas = document.getElementById("camera--output");
   //var dataURL = canvas.toDataURL("image/png");
   var blob = dataURItoBlob(dataURL);
-  var uploadFiles = blob.files;
+  var filex = new File([blob], "filename");
+  var uploadFiles = filex.files;
     //////////////////////////
     //////////////////////////
     
