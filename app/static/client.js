@@ -133,11 +133,11 @@ function analyze() {
     el("analyze-button").innerHTML = "Analyze";
   };
 
-  //var fileData = new FormData();
-  //fileData.append("file", uploadFiles[0]);
-  //xhr.send(fileData);
-    
-  var fileData = new FormData(document.forms[0]);
-  fileData.append("canvasImage", blob);
+  var fileData = new FormData();
+  fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
+    
+  //var fileData = new FormData(document.forms[0]);
+  //fileData.append("canvasImage", blob);
+  //xhr.send(fileData);
 }
