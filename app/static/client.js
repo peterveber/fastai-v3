@@ -93,7 +93,7 @@ function analyze() {
 
   if (uploadFiles.size < 10) alert("Something is wrong with image!");
 
-  //el("analyze-button").innerHTML = "Analyzing...";
+  el("result-label").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
