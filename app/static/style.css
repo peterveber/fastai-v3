@@ -63,10 +63,18 @@ button:focus {
     outline: 0;
 }
 
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 #camera, #camera--view, #camera--sensor, #camera--output{
     position: fixed;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
