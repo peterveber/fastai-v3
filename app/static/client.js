@@ -58,12 +58,6 @@ cameraTrigger.onclick = function() {
     // track.stop();
 };
 
-function downloadCanvas(link, canvasId, filename) {
-link.href = document.getElementById(canvasId).toDataURL();
-link.download = filename;
-
-}
-
 function dataURItoBlob(dataURI) {
     // convert base64/URLEncoded data component to raw binary data held in a string
     var byteString;
@@ -87,20 +81,6 @@ function dataURItoBlob(dataURI) {
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
 /////////////////////////////////////////
-
-function showPicker() {
-  el("file-input").click();
-}
-
-function showPicked(input) {
-  el("upload-label").innerHTML = input.files[0].name;
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    el("image-picked").src = e.target.result;
-    el("image-picked").className = "";
-  };
-  reader.readAsDataURL(input.files[0]);
-}
 
 function analyze() {
   var canvas = document.getElementById("camera--sensor");
