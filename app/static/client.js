@@ -110,12 +110,8 @@ function analyze() {
   var blob = dataURItoBlob(dataURL);
   var filex = new File([blob], "filename");
   var uploadFiles = filex;
-  //var uploadFiles = el("file-input").files;
-    //////////////////////////
-    //////////////////////////
-    
-  //var uploadFiles = el("file-input").files;
-  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
+
+  if (uploadFiles.size < 10) alert("Something is wrong with image!");
 
   el("analyze-button").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
@@ -132,16 +128,8 @@ function analyze() {
     }
     el("analyze-button").innerHTML = "Analyze";
   };
-
-  //var fileData = new FormData();
-  //fileData.append("file", uploadFiles[0]);
- //hr.send(fileData);
     
   var fileData = new FormData();
   fileData.append("file", uploadFiles);
   xhr.send(fileData);
-    
-  //var fileData = new FormData(document.forms[0]);
-  //fileData.append("canvasImage", blob);
-  //xhr.send(fileData);
 }
