@@ -35,13 +35,16 @@ body {
 
 .result-label {
     position: absolute;
+    z-index: 1111;
     top: 0px;
-    left: 0px;
+    left: 50%;
+    margin-top: 0.5em;
+    padding: 20px;
+    font-size: 35;
+    background: white;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0.5em;
-    padding: 10px;
-    font-size: 13px;
+    width: 100px;
 }
 
 button.choose-file-button {
