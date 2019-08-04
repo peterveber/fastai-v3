@@ -34,6 +34,11 @@ body {
 }
 
 .result-label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 0.5em;
     padding: 10px;
     font-size: 13px;
