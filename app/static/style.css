@@ -36,15 +36,16 @@ body {
 .result-label {
     position: absolute;
     z-index: 1111;
-    top: 0px;
+    bottom: 10%;
     left: 50%;
     margin-top: 0.5em;
     padding: 20px;
-    font-size: 35;
+    font-size: 25;
     background: white;
     margin-left: auto;
     margin-right: auto;
     width: 100px;
+    transform: translate(-50%, 0);
 }
 
 button.choose-file-button {
